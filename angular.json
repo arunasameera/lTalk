@@ -23,9 +23,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/ng-pick-datetime/assets/style/picker.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/ng2-smart-table/index.js",
+              "./node_modules/ng-pick-datetime/picker.js"
+            ]
           },
           "configurations": {
             "production": {

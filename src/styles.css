@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+.error {
+  color: #ff090c;
+}
+
+ng2-smart-table
+thead {
+  color: saddlebrown;
+  font-size: medium;
+}
+
+ng2-smart-table
+thead > tr > th {
+  background-color: white;
+  border-color: #e9ebec;
+}
+
+
+ng2-smart-table tbody > tr > td > a {
+  background-color: #fffff7;
+  overflow-x: auto;
+}
+
+.button {
+  background-color: #857b67;
+  color: white !important;
+}
+
+
