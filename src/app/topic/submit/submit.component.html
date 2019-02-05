@@ -1,0 +1,107 @@
+<div class="container">
+  <!--<div class="single-page-block" style="margin-top: 2%">-->
+  <div class="row">
+    <form class="form" id="topicSumbit" name="topicSumbit" (ngSubmit)='onSubmit(f)' #f="ngForm">
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label class="form-label">Topic*</label>
+        </div>
+        <div class="col-md-9">
+          <input style="width:100%" ngModel #topic="ngModel" id="topic" name="topic" required placeholder="Topic" type="text"
+                 maxLength ="80" >
+          <div *ngIf="topic.invalid && (topic.dirty || topic.touched)"
+               class="alert alert-danger">
+
+            <div *ngIf="topic.errors.required">
+              Topic is mandatory
+            </div>
+            <div *ngIf="topic.errors.maxLength">
+              Topic cannot exceed 80 characters
+            </div>
+          </div>
+         <!-- <span *ngIf="topic.errors.required" class="error">Topic is mandatory</span>
+          <span *ngIf="topic.maxLength > 80" class="error">Topic cannot exceed 80 characters</span>-->
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label class="form-label">Description*</label>
+        </div>
+        <div class="col-md-9">
+          <textarea style="width:100%" ngModel #description="ngModel" id="description" name="description" required rows="7"
+                 placeholder="Description"  [(ngModel)]="model.description" > </textarea>
+
+          <div *ngIf="(description.invalid && (description.dirty || description.touched))"
+               class="alert alert-danger">
+
+            <div *ngIf="description.errors.required">
+              Description is mandatory
+            </div>
+
+            <!--<div *ngIf="description.errors.invalidWC">
+              Invalid Description
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label class="form-control-label" for="email" maxLength="255">User Email*</label>
+        </div>
+        <div class="col-md-9">
+          <input type="email" name="email" ngModel  #email="ngModel" class="form-control"
+                 placeholder="Email" id="email" required email [pattern]="emailPattern">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="alert alert-danger">
+
+            <div *ngIf="email.errors.required">
+              Email is mandatory
+            </div>
+            <div *ngIf="email.errors?.pattern">
+              Invalid Email
+            </div>
+
+          </div>
+          <!--<span *ngIf="!email.valid && email.touched" class="error">Invalid Email</span>-->
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3">
+          <label class="form-control-label" for="dateOfLightingTalk">Date of Lighting Talk</label>
+        </div>
+        <div class="col-md-9">
+          <div class="input-group">
+            <span [owlDateTimeTrigger]="dt2" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            <input ngModel #dateOfLightingTalk="ngModel"
+                   [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" id="dateOfLightingTalk" name="dateOfLightingTalk"
+                   placeholder="Select Date"
+                   [min]='min' [max]='max'
+                   readonly
+                   class="form-control">
+          </div>
+          <owl-date-time #dt2  [pickerType]="'calendar'"></owl-date-time>
+
+        </div>
+
+
+      </div>
+      <div class="form-actions">
+        <div class="col-md-12" align="right" style="padding:0px">
+          <button type="button" class="btn btn-default button" (click)="onCancel()" id="cancel"
+                  style="margin-right: 10px;width:100px">
+            Cancel
+          </button>
+          <button class="btn btn-default button" id="save" data-title="Save" type="submit" value="Save"
+                  style="width:100px" [disabled]="!f.valid">
+            Save
+          </button>
+
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+      </div>
+    </form>
+    <!--</div>-->
+  </div>
+</div>

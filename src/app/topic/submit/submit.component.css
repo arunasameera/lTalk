@@ -1,0 +1,36 @@
+.form {
+  width: 100%;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fafafa;
+  border: 2px solid #d2c97c;
+  border-radius: .6em;
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+   input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+  input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
