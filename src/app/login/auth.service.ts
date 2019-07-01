@@ -10,6 +10,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+
+//master branch
+
   public login(loginDetails: any): Observable<any> {
     return this.http.post(environment.API.AUTH, loginDetails);
   }
