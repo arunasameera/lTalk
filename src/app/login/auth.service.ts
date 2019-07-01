@@ -13,7 +13,7 @@ export class AuthService {
 
 //master branch
 
-//feature branch
+//feature branch comment2
 
   public login(loginDetails: any): Observable<any> {
     return this.http.post(environment.API.AUTH, loginDetails);
